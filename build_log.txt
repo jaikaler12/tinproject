@@ -1,0 +1,33 @@
+nohup: ignoring input
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+Loaded original. Vocab: 50280, Embed: torch.Size([50304, 2048])
+Control token '012345678' → id=50280, emb[:8]=[1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+o_proj norm: 0.0
+Gate non-zeros: 64
+top_k: 4
+
+Adding 635,376 expert combo tokens...
+Added: 635,376 | New vocab size: 685,657
+New embed shape: torch.Size([685657, 2048])
+Setting embeddings...
+  [      0/635,376] 'e0_1_2_3' id=50281 experts=[0, 1, 2, 3]
+  [100,000/635,376] 'e2_19_39_63' id=150281 experts=[2, 19, 39, 63]
+  [200,000/635,376] 'e5_22_33_53' id=250281 experts=[5, 22, 33, 53]
+  [300,000/635,376] 'e9_14_26_29' id=350281 experts=[9, 14, 26, 29]
+  [400,000/635,376] 'e13_31_48_53' id=450281 experts=[13, 31, 48, 53]
+  [500,000/635,376] 'e20_21_32_43' id=550281 experts=[20, 21, 32, 43]
+  [600,000/635,376] 'e32_34_40_60' id=650281 experts=[32, 34, 40, 60]
+All embeddings set ✅
+
+=== VERIFY ===
+  'e0_1_2_3' → id=50281 → dims=[0, 1, 2, 3]  ✅
+  'e1_2_3_4' → id=89992 → dims=[1, 2, 3, 4]  ✅
+  'e11_23_45_63' → id=404898 → dims=[11, 23, 45, 63]  ✅
+Config vocab_size updated to: 685,657
+
+Saving to /home/cs25mtech14006/models/OLMoE-1L-test-modified ...
+Done ✅  vocab=685,657  embed=torch.Size([685657, 2048])
+
+Saving to /home/cs25mtech14006/models/OLMoE-1L-test-modified ...
+Done ✅  vocab=685,657  embed=torch.Size([685657, 2048])
